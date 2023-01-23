@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * @return void
+     */
+    public function clients()
+    {
+        return view('clients');
+    }
 }

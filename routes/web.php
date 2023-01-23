@@ -12,8 +12,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('home',[HomeController::class,'home']);
-    Route::get('clients',[HomeController::class,'clients']);
+    Route::get('index',[HomeController::class,'index']);
+    Route::get('clients',[HomeController::class,'clients'])->name('clients');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
