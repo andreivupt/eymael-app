@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,9 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('index',[HomeController::class,'index']);
-    Route::get('clients',[HomeController::class,'clients'])->name('clients');
+    //Route::get('clients',[HomeController::class,'clients'])->name('clients');
+
+    Route::get('clients',[ClientsController::class,'index'])->name('clients.index');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
